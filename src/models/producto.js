@@ -20,7 +20,8 @@ const producto = db.define('producto', {
         allowNull: false
     },
 }, {
-    tableName: 'producto'
+    tableName: 'producto',
+    timestamps: false
 });
 
 module.exports = producto;

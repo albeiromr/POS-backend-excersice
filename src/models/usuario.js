@@ -20,7 +20,8 @@ const usuario = db.define('usuario', {
         allowNull: false
     },
 }, {
-    tableName: 'usuario'
+    tableName: 'usuario',
+    timestamps: false
 });
 
 module.exports = usuario;
