@@ -1,18 +1,20 @@
-const { Sequelize, DataTypes } = require('sequelize');
+const {DataTypes } = require('sequelize');
 const db = require("../Database/database");
 
 const producto = db.define('producto', {
     codigo: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
+        unique: true,
+        autoIncrement: true
     },
     nombre: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(30),
         allowNull: false
     },
     unidad: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(15),
         allowNull: false
     },
     precio: {
