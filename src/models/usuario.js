@@ -17,7 +17,7 @@ const usuario = db.define('usuario', {
         type: DataTypes.STRING(50),
         allowNull: false
     },
-    Contrasena: {
+    contrasena: {
         type: DataTypes.STRING(20),
         allowNull: false
     },

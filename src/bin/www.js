@@ -1,5 +1,6 @@
 const app = require("../app");
 const dotenv = require("dotenv");
+const usuario = require("../models/usuario")
 
 dotenv.config({ path: `${__dirname}/../../.env` });
 
