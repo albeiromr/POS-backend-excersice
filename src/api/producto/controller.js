@@ -6,10 +6,20 @@ const todosController = async (request, response) => {
     response.send(data);
   } catch (error) {
     response.send(error.message);
-  }
+  };
+};
+
+const productoIndividualController = async(request, response) => {
+  try{
+    const data = await producto.findOne({where: {codigo: request.params.idDeProducto}});
+    response.send(data);
+  }catch(error){
+    response.send(error.message);
+  };
 };
 
 
 module.exports = {
-    todosController
+    todosController,
+    productoIndividualController
 };
