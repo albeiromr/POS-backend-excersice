@@ -18,8 +18,33 @@ const productoIndividualController = async(request, response) => {
   };
 };
 
+const crearProductoController = async(request, response) => {
+  try {
+    const nuevoProducto = await producto.create({
+      codigo: request.body.codigo,
+      nombre: request.body.nombre,
+      unidad: request.body.unidad,
+      precio: request.body.precio
+    });
+    response.send(nuevoProducto);
+  }catch(error){
+    console.log(error.message);
+  };
+}
+
+const borrarProductoController = async(request, response) => {
+  try{
+    const deletedProduct = await producto.destroy({where: {codigo: request.params.idDeProducto}});
+    response.send("producto borrado");
+  }catch(error){
+    response.send(error.message)
+  }
+};
+
 
 module.exports = {
     todosController,
-    productoIndividualController
+    productoIndividualController,
+    crearProductoController,
+    borrarProductoController
 };
