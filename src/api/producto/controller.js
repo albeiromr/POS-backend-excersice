@@ -34,7 +34,7 @@ const crearProductoController = async(request, response) => {
 
 const borrarProductoController = async(request, response) => {
   try{
-    const deletedProduct = await producto.destroy({where: {codigo: request.params.idDeProducto}});
+    await producto.destroy({where: {codigo: request.params.idDeProducto}});
     response.send("producto borrado");
   }catch(error){
     response.send(error.message)
